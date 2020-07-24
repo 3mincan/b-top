@@ -90,92 +90,85 @@ export const Formspree: FC<Props> = ({ endpoint }) => {
         <p>Thanks your message, I'll back to you shortly.</p>
       ) : (
         <>
-          <h1 className="h2">Contact</h1>
-          <div className="d-flex flex-column justify-content-center align-items-center main-content">
-            {" "}
-            <div className="container">
-              <div className="col">
-                <form
-                  id="contact-form"
-                  name="myForm"
-                  className="form"
-                  onSubmit={handleOnSubmit}
-                  encType="multipart/form-data"
-                  role="form"
-                >
-                  <div className="form-group">
-                    <label
-                      className="form-label"
-                      id="nameLabel"
-                      htmlFor="name"
-                    ></label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="name"
-                      onChange={handleOnChange}
-                      value={inputs.name}
-                      name="name"
-                      placeholder="Your name"
-                      tabIndex={1}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label
-                      className="form-label"
-                      id="emailLabel"
-                      htmlFor="email"
-                    ></label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      onChange={handleOnChange}
-                      value={inputs.email}
-                      id="email"
-                      name="email"
-                      placeholder="Your Email"
-                      tabIndex={2}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label
-                      className="form-label"
-                      id="messageLabel"
-                      htmlFor="message"
-                    ></label>
-                    <textarea
-                      rows={6}
-                      cols={60}
-                      onChange={handleOnChange}
-                      value={inputs.message}
-                      name="message"
-                      className="form-control"
-                      id="message"
-                      placeholder="Your message"
-                      tabIndex={4}
-                    ></textarea>
-                  </div>
-
-                  <div className="text-center margin-top-25">
-                    <button
-                      type="submit"
-                      className="btn btn-outline-light btn-large"
-                      disabled={serverState.submitting}
-                    >
-                      Submit
-                    </button>
-                    {serverState.status && (
-                      <p className={!serverState.status.ok ? "errorMsg" : ""}>
-                        {!serverState.status.ok ? serverState.status.msg : ""}
-                      </p>
-                    )}
-                  </div>
-                </form>
-              </div>
+          <h1 className="h2 font-weight-bold my-5">Contact</h1>
+          <form
+            id="contact-form"
+            name="myForm"
+            className="form"
+            onSubmit={handleOnSubmit}
+            encType="multipart/form-data"
+            role="form"
+          >
+            <div className="form-group">
+              <label
+                className="form-label"
+                id="nameLabel"
+                htmlFor="name"
+              ></label>
+              <input
+                type="text"
+                className="form-control"
+                id="name"
+                onChange={handleOnChange}
+                value={inputs.name}
+                name="name"
+                placeholder="Your name"
+                tabIndex={1}
+              />
             </div>
-          </div>
+
+            <div className="form-group">
+              <label
+                className="form-label"
+                id="emailLabel"
+                htmlFor="email"
+              ></label>
+              <input
+                type="email"
+                className="form-control"
+                onChange={handleOnChange}
+                value={inputs.email}
+                id="email"
+                name="email"
+                placeholder="Your Email"
+                tabIndex={2}
+              />
+            </div>
+
+            <div className="form-group">
+              <label
+                className="form-label"
+                id="messageLabel"
+                htmlFor="message"
+              ></label>
+              <textarea
+                rows={6}
+                cols={60}
+                onChange={handleOnChange}
+                value={inputs.message}
+                name="message"
+                className="form-control"
+                id="message"
+                placeholder="Your message"
+                tabIndex={4}
+              ></textarea>
+            </div>
+
+            <div className="text-center margin-top-25">
+              <button
+                type="submit"
+                className="btn btn-outline-light btn-large"
+                disabled={serverState.submitting}
+              >
+                Submit
+              </button>
+              {serverState.status && (
+                <p className={!serverState.status.ok ? "errorMsg" : ""}>
+                  {!serverState.status.ok ? serverState.status.msg : ""}
+                </p>
+              )}
+            </div>
+          </form>
         </>
       )}
     </>

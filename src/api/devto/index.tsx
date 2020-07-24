@@ -48,8 +48,6 @@ export const DevTo: FC<Props> = ({ username }) => {
 
   const location = window.location.href;
 
-  console.log(location);
-
   return (
     <>
       {isLoading ? (
@@ -57,6 +55,67 @@ export const DevTo: FC<Props> = ({ username }) => {
       ) : (
         <>
           {data.length > 0 ? (
+            <>
+              <Helmet>
+                <meta charSet="utf-8" />
+                <title>{data[0].name}</title>
+                <meta name="title" content={data.name} />
+                <meta name="description" content={data.name} />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={location} />
+                <meta property="og:title" content={data.name} />
+                <meta property="og:description" content={data.name} />
+                <meta property="og:image" content={data.avatar_url} />
+
+                <meta property="twitter:card" content="summary" />
+                <meta property="twitter:url" content={location} />
+                <meta property="twitter:title" content={data.name} />
+                <meta property="twitter:description" content={data.name} />
+                <meta property="twitter:image" content={data.avatar_url} />
+                <link rel="canonical" href={location} />
+              </Helmet>
+              <h1 className="h2 font-weight-bold my-5">
+                Articles that I published on dev.to
+              </h1>
+              {data.map((article: any, index: number) => (
+                <div key={index}>
+                  <div className="col-lg-4">
+                    <div className="card-deck">
+                      <a
+                        className="text-white"
+                        key={index}
+                        href={article.canonical_url}
+                        target="_blank"
+                      >
+                        <div className="card">
+                          <img
+                            key={index}
+                            className="card-img-top"
+                            src={article.social_image}
+                            alt="Card image cap"
+                          />
+                          <div className="card-body bg-dark text-white">
+                            <h5 className="card-title">
+                              <p>Read More</p>
+                            </h5>
+                            <p className="card-text" key={index}>
+                              <small className="text-muted">
+                                Published at{" "}
+                                {moment(article.created_at).format(
+                                  "DD/MM/YYYY"
+                                )}
+                              </small>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </>
+          ) : (
             <>
               <Helmet>
                 <meta charSet="utf-8" />
@@ -78,49 +137,8 @@ export const DevTo: FC<Props> = ({ username }) => {
                 <meta property="twitter:image" content={data.avatar_url} />
                 <link rel="canonical" href={location} />
               </Helmet>
-              <h1 className="h2">Articles that I published on dev.to</h1>
-              <div className="d-flex flex-column justify-content-center align-items-center main-content">
-                <div className="container">
-                  {data.map((article: any, index: number) => (
-                    <div key={index}>
-                      <div className="col-lg-4">
-                        <div className="card-deck">
-                          <a
-                            className="text-white"
-                            key={index}
-                            href={article.canonical_url}
-                          >
-                            <div className="card">
-                              <img
-                                key={index}
-                                className="card-img-top"
-                                src={article.social_image}
-                                alt="Card image cap"
-                              />
-                              <div className="card-body bg-dark text-white">
-                                <h5 className="card-title">
-                                  <p>Read More</p>
-                                </h5>
-                                <p className="card-text" key={index}>
-                                  <small className="text-muted">
-                                    Published at
-                                    {moment(article.created_at).format(
-                                      "DD/MM/YYYY"
-                                    )}
-                                  </small>
-                                </p>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <h1 className="h2">No articles found</h1>
             </>
-          ) : (
-            <span>No article for now</span>
           )}
         </>
       )}

@@ -75,17 +75,15 @@ export const Github: FC<Props> = ({ username }) => {
             <meta property="twitter:image" content={data.avatar_url} />
             <link rel="canonical" href={location} />
           </Helmet>
-          <div className="d-flex flex-column justify-content-center align-items-center main-content">
-            <img
-              src={data.avatar_url}
-              alt={data.name}
-              className="rounded-circle img-thumbnail profile-picture"
-            />{" "}
-            <h1 className="h2 font-weight-bold mt-2">{data.name}</h1>
-            <h2 className="h3">
-              a {data.bio} from {data.location}
-            </h2>
-          </div>
+          <img
+            src={data.avatar_url}
+            alt={data.name}
+            className="rounded-circle img-thumbnail profile-picture"
+          />{" "}
+          <h1 className="h2 font-weight-bold my-3">{data.name}</h1>
+          <h2 className="h3">
+            a {data.bio} from {data.location}
+          </h2>
         </>
       )}
     </>

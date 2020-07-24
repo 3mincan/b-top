@@ -1,5 +1,5 @@
 import React, { FC, useState, useCallback, useEffect } from "react";
-import { Home, About, Articles, Contact } from "./pages";
+import { Home, About, Articles, Contact, Skills } from "./pages";
 import "./App.scss";
 import { Helmet } from "react-helmet";
 import axios from "axios";
@@ -38,7 +38,6 @@ export const App: FC = () => {
       throw err;
     }
   }, []);
-  console.log(data);
 
   useEffect(() => {
     fetchData();
@@ -57,21 +56,26 @@ export const App: FC = () => {
           <div id="content" className="full">
             <Router>
               <Navbar />
-              <div className="main-content">
-                <Switch>
-                  <Route path="/contact">
-                    <Contact />
-                  </Route>
-                  <Route path="/about">
-                    <About />
-                  </Route>
-                  <Route path="/articles">
-                    <Articles />
-                  </Route>
-                  <Route path="/">
-                    <Home />
-                  </Route>
-                </Switch>
+              <div className="d-flex flex-column justify-content-center align-items-center main-content">
+                <div className="container">
+                  <Switch>
+                    <Route path="/contact">
+                      <Contact />
+                    </Route>
+                    <Route path="/about">
+                      <About />
+                    </Route>
+                    <Route path="/articles">
+                      <Articles />
+                    </Route>
+                    <Route path="/skills">
+                      <Skills />
+                    </Route>
+                    <Route path="/">
+                      <Home />
+                    </Route>
+                  </Switch>
+                </div>
               </div>
             </Router>
           </div>
