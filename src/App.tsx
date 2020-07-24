@@ -21,8 +21,7 @@ type UrlParamsType = {
   active: string;
 };
 
-const nasaBg = "https://api.nasa.gov/planetary/apod?api_key=";
-const apiKey = "LJjujGkoa4J1bHjgIMVF7kSM90vMuwBdTxBB7hKb";
+const splashbaseBg = "http://www.splashbase.co/api/v1/images/random";
 
 export const App: FC = () => {
   const [{ isLoading, data }, setState] = useState<State>({
@@ -33,7 +32,7 @@ export const App: FC = () => {
   const fetchData = useCallback(async () => {
     setState((state) => ({ ...state, isLoading: true }));
     try {
-      const { data } = await axios.get(nasaBg + `${apiKey}`);
+      const { data } = await axios.get(splashbaseBg);
       setState((state) => ({
         ...state,
         data: data,
@@ -59,7 +58,7 @@ export const App: FC = () => {
       ) : (
         <>
           <Helmet>
-            <style>{`div.bg-image { background-image: url("${data.hdurl}") `}</style>
+            <style>{`div.bg-image { background-image: url("${data.url}") `}</style>
           </Helmet>
           <div className="bg-image"></div>
           <div id="content" className="full">

@@ -19,7 +19,7 @@ export const About: FC = () => {
       <p>
         Lol! Maybe you, not me. This project are full of APIs. Here are they:
       </p>
-      <p>NASA APOD Api (for Site Background)</p>
+      <p>Splashbase Api (for Site Background)</p>
       <p>Github Api (on Home Page)</p>
       <p>dev.to api (on Articles Page)</p>
       <p>formspree.io api(on Contact Page)</p>
