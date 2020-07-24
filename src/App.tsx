@@ -21,7 +21,7 @@ type UrlParamsType = {
   active: string;
 };
 
-const splashbaseBg = "http://www.splashbase.co/api/v1/images/random";
+const splashbaseBg = "https://www.splashbase.co/api/v1/images/random";
 
 export const App: FC = () => {
   const [{ isLoading, data }, setState] = useState<State>({
