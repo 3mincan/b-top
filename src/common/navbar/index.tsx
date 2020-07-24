@@ -1,5 +1,16 @@
 import React, { FC } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink,
+} from "react-router-dom";
+import "./style.scss";
+
+type Props = {
+  active?: string;
+};
 
 export const Navbar: FC = () => {
   return (
@@ -20,29 +31,50 @@ export const Navbar: FC = () => {
         <div className="collapse navbar-collapse justify-content-md-center">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <NavLink
+                className="nav-link"
+                activeClassName="selected"
+                exact
+                to="/"
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/skills">
+              <NavLink
+                className="nav-link"
+                activeClassName="selected"
+                to="/skills"
+              >
                 Skills
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/articles">
+              <NavLink
+                className="nav-link"
+                activeClassName="selected"
+                to="/articles"
+              >
                 Articles
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <NavLink
+                className="nav-link"
+                activeClassName="selected"
+                to="/about"
+              >
                 About
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">
+              <NavLink
+                className="nav-link"
+                activeClassName="selected"
+                to="/contact"
+              >
                 Contact
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

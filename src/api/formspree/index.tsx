@@ -90,7 +90,6 @@ export const Formspree: FC<Props> = ({ endpoint }) => {
         <p>Thanks your message, I'll back to you shortly.</p>
       ) : (
         <>
-          <h1 className="h2 font-weight-bold my-5">Contact</h1>
           <form
             id="contact-form"
             name="myForm"

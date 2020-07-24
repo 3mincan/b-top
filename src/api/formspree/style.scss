@@ -9,10 +9,9 @@
     color: #fff;
     box-shadow: none;
     }
-}
-
     .form-control:focus {
-    background-color: transparent;
+    background-color: transparent!important;
     color: #fff;
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
 }

@@ -45,6 +45,12 @@ div#content {
   text-align: center;
 }
 
-a:hover {
-    text-decoration: none;
+a {
+    color: #fff!important;
+    text-decoration: none!important;
 }
+
+a:hover {
+    color: #888!important;
+    text-decoration: none!important;
+} 

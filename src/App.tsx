@@ -5,11 +5,20 @@ import { Helmet } from "react-helmet";
 import axios from "axios";
 import { Loader } from "./common";
 import { Navbar } from "./common";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams,
+} from "react-router-dom";
 
 type State = {
   isLoading: boolean;
   data: any;
+};
+
+type UrlParamsType = {
+  active: string;
 };
 
 const nasaBg = "https://api.nasa.gov/planetary/apod?api_key=";
@@ -59,16 +68,16 @@ export const App: FC = () => {
               <div className="d-flex flex-column justify-content-center align-items-center main-content">
                 <div className="container">
                   <Switch>
-                    <Route path="/contact">
+                    <Route path="/contact" exact>
                       <Contact />
                     </Route>
-                    <Route path="/about">
+                    <Route path="/about" exact>
                       <About />
                     </Route>
-                    <Route path="/articles">
+                    <Route path="/articles" exact>
                       <Articles />
                     </Route>
-                    <Route path="/skills">
+                    <Route path="/skills" exact>
                       <Skills />
                     </Route>
                     <Route path="/">
