@@ -39,15 +39,11 @@ export const Github: FC<Props> = ({ username }) => {
     }
   }, []);
 
-  console.log(data);
-
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
   const location = window.location.href;
-
-  console.log(location);
 
   return (
     <>

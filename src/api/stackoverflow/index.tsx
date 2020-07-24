@@ -39,15 +39,11 @@ export const Stackoverflow: FC<Props> = ({ id }) => {
     }
   }, []);
 
-  console.log(data);
-
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
   const location = window.location.href;
-
-  console.log(location);
 
   return (
     <>

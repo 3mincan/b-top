@@ -40,8 +40,6 @@ export const DevTo: FC<Props> = ({ username }) => {
     }
   }, []);
 
-  console.log(data);
-
   useEffect(() => {
     fetchData();
   }, [fetchData]);
