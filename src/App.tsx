@@ -5,20 +5,11 @@ import { Helmet } from "react-helmet";
 import axios from "axios";
 import { Loader } from "./common";
 import { Navbar } from "./common";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 type State = {
   isLoading: boolean;
   data: any;
-};
-
-type UrlParamsType = {
-  active: string;
 };
 
 const splashbaseBg = "https://www.splashbase.co/api/v1/images/random";
@@ -29,7 +20,7 @@ export const App: FC = () => {
     data: [],
   });
 
-  const fetchData = useCallback(async () => {
+  const fetchBackground = useCallback(async () => {
     setState((state) => ({ ...state, isLoading: true }));
     try {
       const { data } = await axios.get(splashbaseBg);
@@ -48,8 +39,8 @@ export const App: FC = () => {
   }, []);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    fetchBackground();
+  }, [fetchBackground]);
 
   return (
     <>

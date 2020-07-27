@@ -13,11 +13,11 @@ export const About: FC = () => {
       </h1>
       <p>Hi! This is Project B-TOP! (Bring Together Online Presence)</p>
       <p>
-        We all fill too many forms and profiles. So who do you wanna write
-        another content?
+        We all fill too many forms and profiles. So who wants to write another
+        content?
       </p>
       <p>
-        Lol! Maybe you, not me. This project are full of APIs. Here are they:
+        Lol! Maybe you, not me. This project are full of APIs. Here they are:
       </p>
       <p>Splashbase Api (for Site Background)</p>
       <p>Github Api (on Home Page)</p>
