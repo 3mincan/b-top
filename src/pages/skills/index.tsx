@@ -16,7 +16,7 @@ import { Footer } from "../../common";
 export const Skills: FC = () => {
   return (
     <>
-      <h1 className="flex-fill font-weight-lighter h2 my-5">
+      <h1 className="flex-fill font-weight-bold h2 my-5">
         <FontAwesomeIcon icon={faCogs} />
         <span className="m-3">Skills</span>
       </h1>

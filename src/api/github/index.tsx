@@ -76,7 +76,7 @@ export const Github: FC<Props> = ({ username }) => {
             alt={data.name}
             className="rounded-circle img-thumbnail profile-picture"
           />{" "}
-          <h1 className="h2 font-weight-lighter my-3">{data.name}</h1>
+          <h1 className="h2 font-weight-bold my-3">{data.name}</h1>
           <h2 className="h3">
             a {data.bio} from {data.location}
           </h2>

@@ -21,6 +21,7 @@ export const App: FC = () => {
   });
 
   const fetchBackground = useCallback(async () => {
+    console.info("I stand with Black Lives Matter");
     setState((state) => ({ ...state, isLoading: true }));
     try {
       const { data } = await axios.get(splashbaseBg);

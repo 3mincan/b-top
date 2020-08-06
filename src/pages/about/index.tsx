@@ -8,7 +8,7 @@ import { Footer } from "../../common";
 export const About: FC = () => {
   return (
     <>
-      <h1 className="flex-fill font-weight-lighter h2 my-5">
+      <h1 className="flex-fill font-weight-bold h2 my-5">
         <FontAwesomeIcon icon={faInfoCircle} />
         <span className="m-3">About</span>
       </h1>
