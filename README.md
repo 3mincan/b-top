@@ -4,7 +4,7 @@
 
 This repo has prepared for lazy developers who wants a website. You just need to enter your usernames that you used sites (like github, dev.to etc.) in the relevant fields.
 
-[![An Example](https://demirkaya.net/)]
+[An Example](https://demirkaya.net/)
 
 ## Deploy Your Own
 
