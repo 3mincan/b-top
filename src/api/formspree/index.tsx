@@ -68,22 +68,19 @@ export const Formspree: FC<Props> = ({ endpoint }) => {
       <Helmet>
         <meta charSet="utf-8" />
 
-        <title>Emincan Demirkaya | Contact</title>
-        <meta name="title" content="Emincan Demirkaya" />
-        <meta name="description" content="Contact Emincan Demirkaya" />
+        <title>Name Surname | Contact</title>
+        <meta name="title" content="Name Surname" />
+        <meta name="description" content="Contact Name Surname" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={location} />
-        <meta property="og:title" content="Emincan Demirkaya" />
-        <meta property="og:description" content="Emincan Demirkaya" />
+        <meta property="og:title" content="Name Surname" />
+        <meta property="og:description" content="Name Surname" />
 
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:url" content={location} />
-        <meta property="twitter:title" content="Emincan Demirkaya" />
-        <meta
-          property="twitter:description"
-          content="Contact Emincan Demirkaya"
-        />
+        <meta property="twitter:title" content="Name Surname" />
+        <meta property="twitter:description" content="Contact Name Surname" />
         <link rel="canonical" href={location} />
       </Helmet>
       {serverState.status.ok ? (

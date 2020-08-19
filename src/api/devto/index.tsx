@@ -73,42 +73,38 @@ export const DevTo: FC<Props> = ({ username }) => {
                 <meta property="twitter:image" content={data.avatar_url} />
                 <link rel="canonical" href={location} />
               </Helmet>
-              {data.map((article: any, index: number) => (
-                <div key={index}>
-                  <div className="col-lg-4">
-                    <div className="card-deck">
-                      <a
-                        className="text-white"
+              <div className="col-lg-12">
+                <div className="card-columns">
+                  {data.map((article: any, index: number) => (
+                    <div className="card bg-dark">
+                      <img
                         key={index}
-                        href={article.canonical_url}
-                        target="_blank"
-                      >
-                        <div className="card">
-                          <img
+                        className="card-img-top"
+                        src={article.social_image}
+                        alt={article.title}
+                      />
+                      <div className="card-body text-white">
+                        <h5 className="card-title">
+                          <a
+                            className="text-white h6"
                             key={index}
-                            className="card-img-top"
-                            src={article.social_image}
-                            alt="Card image cap"
-                          />
-                          <div className="card-body bg-dark text-white">
-                            <h5 className="card-title">
-                              <p>Read More</p>
-                            </h5>
-                            <p className="card-text" key={index}>
-                              <small className="text-muted">
-                                Published at{" "}
-                                {moment(article.created_at).format(
-                                  "DD/MM/YYYY"
-                                )}
-                              </small>
-                            </p>
-                          </div>
-                        </div>
-                      </a>
+                            href={article.canonical_url}
+                            target="_blank"
+                          >
+                            Read More
+                          </a>
+                        </h5>
+                        <p className="card-text" key={index}>
+                          <small className="text-muted">
+                            Published at{" "}
+                            {moment(article.created_at).format("DD/MM/YYYY")}
+                          </small>
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </>
           ) : (
             <>

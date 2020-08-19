@@ -11,7 +11,7 @@ export const Articles: FC = () => {
         <FontAwesomeIcon icon={faNewspaper} />
         <span className="m-3">Articles</span>
       </h1>
-      <DevTo username="3mincan" />
+      <DevTo username="devteam" />
       <Footer />
     </>
   );

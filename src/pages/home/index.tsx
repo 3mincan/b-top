@@ -6,7 +6,7 @@ import { Footer } from "../../common";
 export const Home: FC = () => {
   return (
     <>
-      <Github username="3mincan" />
+      <Github username="github" />
       <Footer />
     </>
   );

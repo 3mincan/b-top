@@ -4,8 +4,8 @@ import { Social } from "../../common";
 export const Footer: FC = () => {
   return (
     <>
-      <span className="fixed-bottom mb-5">
-        <Social github="3mincan" linkedin="edemirkaya" telegram="edemirkaya" />
+      <span className="mb-5">
+        <Social github="github" linkedin="linkedin" telegram="telegram" />
       </span>
     </>
   );

@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: var(--gray-dark);
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
     align-items:center;
     justify-content: center;
     display: flex
@@ -14,7 +14,6 @@ html, body, div#root, div.full, div.bg-image {
 }
 
 div.main-content {
-    height: 70vh;
     width: 100vw;
 }
 
@@ -32,8 +31,6 @@ div.bg-image {
 }
 
 div#content {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
   position: absolute;
